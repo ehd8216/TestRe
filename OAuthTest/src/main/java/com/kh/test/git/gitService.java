@@ -1,4 +1,4 @@
-package com.kh.test;
+package com.kh.test.git;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;

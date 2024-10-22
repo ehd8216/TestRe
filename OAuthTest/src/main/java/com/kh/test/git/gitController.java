@@ -1,10 +1,10 @@
-package com.kh.test;
-
+package com.kh.test.git;
 import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,10 +27,11 @@ public class gitController {
 	
 	// 
 	@RequestMapping("callback")
-	public String callback(@RequestParam String code, HttpSession session) throws IOException {
+	public String callback(@RequestParam String code, HttpSession session, HttpServletResponse hsr) throws IOException {
 		String token = getToken(code);
 		System.out.println(token);
 		session.setAttribute("token", token);
+		
 		
 		return "redirect:/";
 	}
